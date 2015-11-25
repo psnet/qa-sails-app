@@ -1,0 +1,14 @@
+
+<div class="questions-list">
+  <% if (questions.length) {
+    questions.forEach(function(question) { %>
+      <div class="question-item">
+        <%= question.user %> &rarr;
+        <a href="<%= question.getUrl() %>"><%= question.title %></a>
+        (<%= __('%s answers', question.answers_count) %>)
+      </div>
+    <% })
+  } else { %>
+    <%= __('No questions yet.') %>
+  <% } %>
+</div>

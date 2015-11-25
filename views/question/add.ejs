@@ -1,0 +1,26 @@
+
+<% include ../layout_elements/header.ejs %>
+
+<div class="qa-add">
+  <form action="/question/add" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+    <div class="mb-20">
+      <%= __('User') %>
+      <br />
+      <input type="text" name="user" />
+    </div>
+    <div class="mb-20">
+      <%= __('Title') %>
+      <br />
+      <input type="text" name="title" />
+    </div>
+    <div class="mb-20">
+      <%= __('Description') %>
+      <br />
+      <textarea name="description"></textarea>
+    </div>
+    <input type="submit" value="<%= __('Add new') %>">
+  </form>
+</div>
+
+<% include ../layout_elements/footer.ejs %>

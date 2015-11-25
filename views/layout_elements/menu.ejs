@@ -1,0 +1,8 @@
+
+<ul class="link-items">
+  <% locals.menu_item = locals.menu_item ? menu_item : '' %>
+  <li class="<% if (menu_item == 'add') { %>current<% } %>"><a href="/question/add"><%= __('Add new question') %></a></li>
+  <li class="<% if (menu_item == 'all') { %>current<% } %>"><a href="/question/all"><%= __('All questions') %></a></li>
+  <li class="<% if (menu_item == 'wa') { %>current<% } %>"><a href="/question/with-answer"><%= __('Questions with answers') %> </a></li>
+  <li class="<% if (menu_item == 'woa') { %>current<% } %>"><a href="/question/without-answer"><%= __('Questions without answers') %> </a></li>
+</ul>

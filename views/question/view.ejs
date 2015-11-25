@@ -1,0 +1,31 @@
+
+<% include ../layout_elements/header.ejs %>
+
+<div class="question-item-view">
+  <h3><%= question.title %></h3>
+  <div class="mb-10">
+    <%= question.user %> <%= __('wrote') %>:
+  </div>
+  <div>
+    <i><%= question.description %></i>
+  </div>
+</div>
+<div class="answers-list">
+  <div class="answer-form">
+    <% include ../answer/add.ejs %>
+  </div>
+  <div class="answers-items-list">
+    <% if (question.answers.length) {
+      question.answers.forEach(function(answer, i) { %>
+        <div class="answer-item">
+          <div class="fl-r">#<%= i %></div>
+          <%= answer.user %> &rarr; <i><%= answer.text %></i>
+        </div>
+      <% })
+    } else { %>
+      <%= __('No answers for this question yet.') %>
+    <% } %>
+  </div>
+</div>
+
+<% include ../layout_elements/footer.ejs %>

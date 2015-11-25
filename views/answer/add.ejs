@@ -1,0 +1,19 @@
+
+<h3 class="mb-20">
+  <%= __('Add new answer to question') %>
+</h3>
+<form action="/answer/add" method="post" enctype="application/x-www-form-urlencoded">
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+  <input type="hidden" name="question_id" value="<%= question.id %>" />
+  <div class="mb-20">
+    <%= __('User') %>
+    <br />
+    <input type="text" name="user" />
+  </div>
+  <div class="mb-20">
+    <%= __('Answer text') %>
+    <br />
+    <textarea name="text"></textarea>
+  </div>
+  <input type="submit" value="<%= __('Add new') %>">
+</form>
