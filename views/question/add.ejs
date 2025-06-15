@@ -7,17 +7,17 @@
     <div class="mb-20">
       <%= __('User') %>
       <br />
-      <input type="text" name="user" />
+      <input type="text" name="user" required minlength="3" />
     </div>
     <div class="mb-20">
       <%= __('Title') %>
       <br />
-      <input type="text" name="title" />
+      <input type="text" name="title" required minlength="3" />
     </div>
     <div class="mb-20">
       <%= __('Description') %>
       <br />
-      <textarea name="description"></textarea>
+      <textarea name="description" required minlength="3"></textarea>
     </div>
     <input type="submit" value="<%= __('Add new') %>">
   </form>

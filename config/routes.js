@@ -22,74 +22,80 @@
 
 module.exports.routes = {
 
-  /**
-   * Список всех вопросов
-   */
-  '/': '/question/all',
-  'get /question/all': {
-    controller: 'question',
-    action: 'all',
-    skipAssets: true
-  },
-  /**
-   * Форма добавления вопроса
-   */
-  'get /question/add': {
-    view: 'question/add',
-    locals: {
-      menu_item: 'add'
+    /**
+     * List of all questions
+     */
+    '/': '/question/all',
+    'get /question/all': {
+        controller: 'question',
+        action: 'all',
+        skipAssets: true
     },
-    skipAssets: true
-  },
-  /**
-   * Обработчик добавления вопроса
-   */
-  'post /question/add': {
-    controller: 'question',
-    action: 'add',
-    skipAssets: true
-  },
-  /**
-   * Форма просмотра вопроса
-   */
-  'get r|^/question/view/(\\d+)$|id': {
-    controller: 'question',
-    action: 'view',
-    skipAssets: true
-  },
-  /**
-   * Обработчик добавления ответа
-   */
-  'post /answer/add': {
-    controller: 'answer',
-    action: 'add',
-    skipAssets: true
-  },
-  /**
-   * Список вопросов с ответами
-   */
-  'get /question/with-answer': {
-    controller: 'question',
-    action: 'withAnswer',
-    skipAssets: true
-  },
-  /**
-   * Список вопросов без ответов
-   */
-  'get /question/without-answer': {
-    controller: 'question',
-    action: 'withoutAnswer',
-    skipAssets: true
-  }
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /**
+     * Question adding form
+     */
+    'get /question/add': {
+        view: 'question/add',
+        locals: {
+            menu_item: 'add'
+        },
+        skipAssets: true
+    },
+
+    /**
+     * Add question handler
+     */
+    'post /question/add': {
+        controller: 'question',
+        action: 'add',
+        skipAssets: true
+    },
+
+    /**
+     * Question view form
+     */
+    'get r|^/question/view/(\\d+)$|id': {
+        controller: 'question',
+        action: 'view',
+        skipAssets: true
+    },
+
+    /**
+     * Response add handler
+     */
+    'post /answer/add': {
+        controller: 'answer',
+        action: 'add',
+        skipAssets: true
+    },
+
+    /**
+     * List of questions with answers
+     */
+    'get /question/with-answer': {
+        controller: 'question',
+        action: 'withAnswer',
+        skipAssets: true
+    },
+
+    /**
+     * List of unanswered questions
+     */
+    'get /question/without-answer': {
+        controller: 'question',
+        action: 'withoutAnswer',
+        skipAssets: true
+    }
+
+    /***************************************************************************
+    *                                                                          *
+    * Custom routes here...                                                    *
+    *                                                                          *
+    * If a request to a URL doesn't match any of the custom routes above, it   *
+    * is matched against Sails route blueprints. See `config/blueprints.js`    *
+    * for configuration options and examples.                                  *
+    *                                                                          *
+    ***************************************************************************/
 
 };
